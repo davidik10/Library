@@ -1,0 +1,39 @@
+:root {
+    --main-color: linear-gradient(to right,rgb(233, 73, 73),rgb(228, 162, 18));
+}
+
+.bookCards {
+    display: grid;
+    justify-content: space-between;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, 200px);
+    margin-top: 50px;
+}
+
+.card {
+    display: grid;
+    border: 1px solid;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--main-color);
+    font-weight: bold;
+}
+
+.addBook {
+    appearance: none;
+    border-radius: 10px;
+    background-image: var(--main-color);
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    color: rgb(45, 43, 85);
+    padding: 5px;
+    position: relative;
+    float: right;
+    top:800px;
+}
+
+.addBook:hover {
+    scale:1.1;
+}
