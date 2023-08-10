@@ -1,3 +1,8 @@
+let title,author,pages,read;
+let bookCard,bookCards,bookIndex;
+let library = [];
+const form =  document.querySelector('form');
+
 const addBook = document.querySelector('.addBook');
 addBook.addEventListener('click', createForm);
 
@@ -111,27 +116,36 @@ function booksDisplay(library) {
         const title = document.createElement('h1');
         const author = document.createElement('p');
         const pages = document.createElement('p');
-        const readStatus = document.createElement('p');
+        const read = document.createElement('p');
+        const remove = document.createElement('button');
+        remove.classList.add('remove');
+        bookIndex = library.indexOf(book) 
         title.textContent = `${book.title}`;
         bookCard.appendChild(title);
         author.textContent = `Author: ${book.author}`;
         bookCard.appendChild(author);
         pages.textContent = `Pages: ${book.pages}`;
         bookCard.appendChild(pages);
-        readStatus.textContent = `Read: ${book.readStatus}`;
-        bookCard.appendChild(readStatus);
-        bookCards.appendChild(bookCard);
+        read.textContent = `Read: ${book.read}`;
+        bookCard.appendChild(read);
+        remove.textContent = 'Remove';
+        bookCard.appendChild(remove);
+        bookCard.setAttribute('data-index', `${bookIndex}`);
+        console.log(bookCard);
     });
     bookCards.appendChild(bookCard);
     removeBook(library);
 }
 
 function removeBook(library) {
-    library.forEach(book => {
-        console.log(book)
-        /* remove.addEventListener('click', (e) => {
-            bookCard.remove();
-        }) */
-    })
+    const removeButtons = document.querySelectorAll('.remove')
+    removeButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            button.parentNode.remove();
+            let book = button.parentNode.getAttribute('data-index')
+            bookIndex = library.indexOf(library[book]);
+            library.splice(bookIndex,1);
+        });
+    });
 }
 
