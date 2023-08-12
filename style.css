@@ -9,7 +9,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url("/img/library.webp");
+    background-image: url("./img/library.webp");
     background-size: cover;
 }
 
@@ -93,7 +93,7 @@ form>button {
     justify-content:flex-start;
     padding:40px 60px 70px;
     align-items: center;
-    background-image: url("/img/book.png");
+    background-image: url("./img/book.png");
     background-size: cover;
     font-size: 20px;
     /* padding-left: 30px; */
