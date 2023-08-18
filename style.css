@@ -77,8 +77,7 @@ form>button {
     gap: 20px;
     overflow:visible;
     grid-template-columns: repeat(auto-fill, 270px);
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin: 20px 20px 50px;
 }
 
 .card {
